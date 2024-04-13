@@ -22,6 +22,7 @@
     <!-- header design -->
     <header class="header">
         <a href="index1.html" class="logo">Profil Saya</a>
+        
 
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
@@ -41,6 +42,7 @@
     <section class="home" id="home">
         <div class="home-content">
             <h1>Hello</h3>
+            <p id="clock" class="center"></p>
             <p>If you are upset or dizzy, go to my house, we talk so that we are dizzy together</p>
 
             <div class="social-media">
@@ -253,3 +255,14 @@
 </body>
 
 </html>
+<script>
+ function updateClock() {
+ const now = new Date();
+ const hours = String(now.getHours()).padStart(2, '0');
+ const minutes = String(now.getMinutes()).padStart(2, '0');
+ const seconds = String(now.getSeconds()).padStart(2, '0');
+ document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+ }
+ setInterval(updateClock, 1000);
+ updateClock(); // Initialize clock immediately
+                </script>
